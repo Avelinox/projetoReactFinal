@@ -50,7 +50,7 @@ function App() {
     <Router>
 
       <Header />
-      
+
       <Switch>
         <Route path ="/add" component ={AdicionarProduto}/>
         <Route path ="/" component ={ListaProdutos}/>
