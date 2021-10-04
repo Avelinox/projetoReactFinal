@@ -1,22 +1,28 @@
 import React from "react";
 
-class AddProduto extends React.Component{
+class EditProduto extends React.Component{
     //criando configuraçoes
-    state = {
-        Nome_do_produto : "",
-        Preco : "",
-        Tamanho : "",
-        Cor : ""
-      };
+   constructor (props){
+       super(props)
+       const {id,Nome_do_produto,Preco,Tamanho,Cor} = props.location.state.produto;
 
-    add =(e)=>{
+       this.state = {
+           id :id,
+           Nome_do_produto:Nome_do_produto,
+           Preco:Preco,
+           Tamanho:Tamanho,
+           Cor:Cor
+       }
+   }
+
+    update =(e)=>{
         e.preventDefault();
         if(this.state.Nome_do_produto ==="" || this.state.Preco ===""){
             alert("Os dois primeiros campos são obrigatórios")
             return
         }
         //mostrar dados organizados quando adicionado
-        this.props.novoProduto(this.state)
+        this.props.updateProduto(this.state)
 
         //limpando informacoes depois de adicionado
         this.setState({Nome_do_produto : "", Preco : "", Tamanho : "", Cor : ""});
@@ -30,8 +36,8 @@ class AddProduto extends React.Component{
     render(){
         return(
             <div className ="ui main">
-                <h2>Adicionar Produtos</h2>
-                <form className = "ui form" onSubmit={this.add}>
+                <h2>Atualizar Produto</h2>
+                <form className = "ui form" onSubmit={this.update}>
                     <div className = "field">
                         <label>Nome do produto</label>
                         <input type ="text" name = "name" placeholder = "Calça Jeans" value ={this.state.Nome_do_produto} onChange = {(e)=>this.setState({Nome_do_produto: e.target.value})}/>
@@ -51,7 +57,7 @@ class AddProduto extends React.Component{
                         <label>Cor do Produto</label>
                         <input type ="text" name = "name" placeholder = "Cinza" value ={this.state.Cor} onChange = {(e)=>this.setState({Cor: e.target.value})}/>
                     </div>
-                    <button className ="ui button blue">Adicionar</button>
+                    <button className ="ui button blue">Atualizar</button>
                 </form>
             </div>
         );
@@ -59,4 +65,4 @@ class AddProduto extends React.Component{
 
 }
 
-export default AddProduto;
+export default EditProduto;
