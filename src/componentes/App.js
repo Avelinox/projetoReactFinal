@@ -30,7 +30,7 @@ function App() {
       id:uuid(),
       ...produto
     }
-    //criando chamadas da api
+    //Cadastrando produto na rota produtos
     const resposta = await api.post("/produtos", request)
 
     configProduto([...produtos, resposta.data]);
@@ -65,11 +65,7 @@ function App() {
 //criando efeito de como os dados vão ser apresentados
   useEffect(()=>{
 
-    // const visualizarProdutos =JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY,JSON));
-
-    // if(visualizarProdutos){
-    //   configProduto(visualizarProdutos)
-    // }
+    
 
     const getProdutos = async ()=>{
       const todosProdutos =  await recuperarProduto();
@@ -92,8 +88,7 @@ function App() {
       <Header />
 
       <Switch>
-      {/* <Route path ="/" exact component ={()=><ListaProdutos produtos={produtos} produtoId ={deletarProd}/>}/> */}
-
+      
         <Route path ="/" exact render={(props)=>(<ListaProdutos {...props} produtos={produtos} produtoId ={deletarProd}/>)} 
         />
         
@@ -106,9 +101,7 @@ function App() {
        
       </Switch>
       
-      {/* <AdicionarProduto novoProduto ={ novoProduto}/> */}
-      {/* Adicionando minha variavel na lista dos produtos */}
-      {/* <ListaProdutos produtos={produtos} produtoId ={deletarProd}/> */}
+      
       
     </Router>
 

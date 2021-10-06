@@ -1,32 +1,11 @@
 {
   "produtos": [
     {
-      "id": "f47a5855-4e23-4d12-b64f-2b18f55447ac",
-      "Nome_do_produto": "Moleton Unisex",
-      "Preco": "20.92",
-      "Tamanho": "MM e Menores",
-      "Cor": "Azul, Branco, Amerelo,Preta e Xadrex"
-    },
-    {
-      "id": "742bb367-5a2e-4681-9e26-24fa85f7130d",
-      "Nome_do_produto": "Short Masculino",
-      "Preco": "31.60",
-      "Tamanho": "XL",
-      "Cor": "Maron"
-    },
-    {
-      "id": "c87125c4-27b4-48bb-b1c3-d4c3b9d75a0a",
-      "Nome_do_produto": "Mochila'",
-      "Preco": "30.90",
-      "Tamanho": "Tamanho Normal",
-      "Cor": "Azul e Branca"
-    },
-    {
-      "id": "a2ac41f7-34f9-46bb-aec7-dcb2fe234257",
-      "Nome_do_produto": "Lençois de cama",
-      "Preco": "223",
-      "Tamanho": "3x4",
-      "Cor": "Cores vivas"
+      "id": "4541b9d2-af01-4e0b-91c0-bfd98bff600d",
+      "Nome_do_produto": "Blusa",
+      "Preco": "20",
+      "Tamanho": "m",
+      "Cor": "branca"
     }
   ]
 }
