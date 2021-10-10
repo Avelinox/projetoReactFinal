@@ -1,33 +1,34 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import im from "../imagens/produto.png"
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import im from "../imagens/produto.png";
 
-const ProdutoCard = (props)=>{
-    const{id,Nome_do_produto,Preco,Tamanho,Cor} = props.produto;
+const ProdutoCard = ({ handleDeleteById, produto }) => {
+  const { id, Nome_do_produto, Preco, Tamanho, Cor } = produto;
 
-    return(
-        <div className= "item" style = {{ marginTop:"5px"}}>
-            <img className = "ui avatar image" src ={im} alt = "produto"/>
-        <div className = "content" >
-
-            {/* Adicionando link para quando acessar individualmente os produtos */}
-            <Link to={{pathname:`/produto/${id}` ,state:{produto:props.produto}}} >
-            <div className = "header">{Nome_do_produto}</div>
-            <div>{Preco}</div>
-            <div>{Tamanho}</div>
-            <div>{Cor}</div>
-            </Link>
-        </div>
-        {/* adicionando balde de lixo */}
-        <i className = "trash alternate outline icon" style = {{color:"red",marginTop:"10px",marginLeft:"10px"}} onClick = {()=>{ props.clickBalde(id)}}></i>
-
-        <Link to={{pathname:`/edit` ,state:{produto:props.produto}}} >
-        {/* icone para atualizar */}
-        <i className = "edit alternate outline icon" style = {{color:"blue",marginTop:"10px"}} ></i>
+  return (
+    <tr>
+      <td>
+        <img width="35px" src={im} alt="produto" />
+      </td>
+      <td>
+        <Link to={{ pathname: `/produto/${id}`, state: { produto: produto } }}>
+          <div className="header">{Nome_do_produto}</div>
         </Link>
-    </div>
-    );
-
-}
+      </td>
+      <td>{Preco}</td>
+      <td>{Tamanho}</td>
+      <td>{Cor}</td>
+      <td>
+        <Button variant="danger" onClick={() => handleDeleteById(id)}>
+          Delete
+        </Button>
+        <Link to={{ pathname: `/edit`, state: { produto } }}>
+          <Button>Editar</Button>
+        </Link>
+      </td>
+    </tr>
+  );
+};
 
 export default ProdutoCard;
