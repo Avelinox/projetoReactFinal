@@ -7,7 +7,7 @@ class AddProduto extends React.Component{
         Preco : "",
         Tamanho : "",
         Cor : ""
-      };
+      }; 
 
     add =(e)=>{
         e.preventDefault();

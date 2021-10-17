@@ -1,32 +1,18 @@
 {
   "produtos": [
     {
-      "id": "f47a5855-4e23-4d12-b64f-2b18f55447ac",
-      "Nome_do_produto": "Moleton ",
-      "Preco": "20.92",
-      "Tamanho": "MM e Menores",
-      "Cor": "Azul, Branco, Amerelo,Preta e Xadrex"
-    },
-    {
-      "id": "742bb367-5a2e-4681-9e26-24fa85f7130d",
-      "Nome_do_produto": "Short Masculino",
-      "Preco": "31.60",
-      "Tamanho": "XL",
-      "Cor": "Maron"
-    },
-    {
-      "id": "35a8b0f8-995a-4b2b-92fa-936374651fa8",
-      "Nome_do_produto": "Camisa de Mangas compridas",
-      "Preco": "20",
-      "Tamanho": "XL",
-      "Cor": "Xadrex"
-    },
-    {
       "id": "c2e21ce4-b567-475c-bab5-fb8c7498b6fc",
       "Nome_do_produto": "Calção",
       "Preco": "23.30",
       "Tamanho": "32",
       "Cor": "HAVIANA"
+    },
+    {
+      "id": "6a0c73c4-6c0e-4a74-9b41-d3a94c26f232",
+      "Nome_do_produto": "Carro",
+      "Preco": "50",
+      "Tamanho": "Grande",
+      "Cor": "Azul"
     }
   ]
-}
+} 
