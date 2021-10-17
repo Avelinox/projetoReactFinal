@@ -29,6 +29,6 @@ const ProdutoCard = ({ handleDeleteById, produto }) => {
       </td>
     </tr>
   );
-};
+}; 
 
 export default ProdutoCard;

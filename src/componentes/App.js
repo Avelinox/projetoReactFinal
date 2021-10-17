@@ -13,7 +13,7 @@ import EditProduto from "./Editproduto";
 function App() {
   
   const LOCAL_STORAGE_KEY = "produtos";
-  const [produtos, configProduto] = useState([]);
+  const [produtos, configProduto] = useState([]); 
 
   //recuperar produtos da fake api
   const recuperarProduto = async () => {

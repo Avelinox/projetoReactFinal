@@ -20,5 +20,5 @@ const ProdutoInfo = (props) => {
       </Card>
     </Layout>
   );
-};
+}; 
 export default ProdutoInfo;

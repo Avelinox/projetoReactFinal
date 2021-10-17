@@ -14,7 +14,7 @@ class EditProduto extends React.Component {
       Tamanho: Tamanho,
       Cor: Cor,
     };
-  }
+  } 
 
   update = (e) => {
     e.preventDefault();

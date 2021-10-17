@@ -10,6 +10,6 @@ const Layout = ({ children, title }) => {
       <Row>{children}</Row>
     </Container>
   );
-};
+}; 
 
 export default Layout;

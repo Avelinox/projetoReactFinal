@@ -29,5 +29,5 @@ const ListProduto = ({ produtos: products, deleteProductById }) => {
       </Table>
     </Layout>
   );
-};
+}; 
 export default ListProduto;
