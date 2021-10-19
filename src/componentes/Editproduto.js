@@ -45,7 +45,7 @@ class EditProduto extends React.Component {
     return (
       <Layout title={`Atualizar ${this.state.name}`}>
         <Card>
-          <Card.Header>Info Producto</Card.Header>
+          <Card.Header>Info Produto</Card.Header>
           <Card.Body>
             <FormProduct
               values={this.state}

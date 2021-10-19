@@ -4,7 +4,7 @@ const NavBar = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container px-4 px-lg-5">
       <a className="navbar-brand" href="#!">
-        LOJA <b> HAY </b>
+        LOJA <b> TOTER </b>
       </a>
       <button
         className="navbar-toggler"

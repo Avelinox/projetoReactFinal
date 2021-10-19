@@ -9,7 +9,7 @@ const Header = () => {
         <Nav className="justify-content-center">
           <Navbar.Brand href="/">Gerência da Loja</Navbar.Brand>
           <Nav.Item>
-            <Link className="nav-link text-white" to="/admin/">Lista dos produtos</Link>
+            <Link className="nav-link text-white" to="/admin/">Lista de Produtos</Link>
           </Nav.Item>
           <Nav.Item>
             <Link className="nav-link text-white" to="/admin/add">Adicionar Produto</Link>

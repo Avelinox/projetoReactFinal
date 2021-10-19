@@ -4,7 +4,7 @@ const Footer = () => (
   <footer className="py-5 bg-dark">
     <div className="container">
       <p className="m-0 text-center text-white">
-        Copyright &copy; Los Chamos 2021
+        Copyright &copy; Loja Toter 2021
       </p>
     </div>
   </footer>
