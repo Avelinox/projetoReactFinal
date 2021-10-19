@@ -1,62 +1,54 @@
 import React from "react";
+import Layout from "./LayoutAdmin";
+import { Card } from "react-bootstrap";
+import FormProduct from "./FormProduct";
 
-class AddProduto extends React.Component{
-    //criando configuraçoes
-    state = {
-        Nome_do_produto : "",
-        Preco : "",
-        Tamanho : "",
-        Cor : ""
-      };
+class AddProduto extends React.Component {
+  //criando configuraçoes
+  state = {
+    name: "",
+    price: "",
+    size: "",
+    color: "",
+    url_img: "",
+  };
 
-    add =(e)=>{
-        e.preventDefault();
-        if(this.state.Nome_do_produto ==="" || this.state.Preco ===""){
-            alert("Os dois primeiros campos são obrigatórios")
-            return
-        }
-        //mostrar dados organizados quando adicionado
-        this.props.novoProduto(this.state)
-
-        //limpando informacoes depois de adicionado
-        this.setState({Nome_do_produto : "", Preco : "", Tamanho : "", Cor : ""});
-
-        //depois de adicionado queremos voltar para a nossa lista
-        this.props.history.push("/");
+  add = (e) => {
+    e.preventDefault();
+    if (this.state.name === "" || this.state.price === "") {
+      alert("Os dois primeiros campos são obrigatórios");
+      return;
     }
+    //mostrar dados organizados quando adicionado
+    this.props.novoProduto(this.state);
 
+    //limpando informacoes depois de adicionado
+    this.setState({ name: "", price: "", size: "", color: "", url_img: "" });
 
+    //depois de adicionado queremos voltar para a nossa lista
+    this.props.history.push("/admin");
+  };
 
-    render(){
-        return(
-            <div className ="ui main">
-                <h2>Adicionar Produtos</h2>
-                <form className = "ui form" onSubmit={this.add}>
-                    <div className = "field">
-                        <label>Nome do produto</label>
-                        <input type ="text" name = "name" placeholder = "Calça Jeans" value ={this.state.Nome_do_produto} onChange = {(e)=>this.setState({Nome_do_produto: e.target.value})}/>
-                    </div>
+  changeValues = (newValue) => {
+    this.setState(newValue);
+  };
 
-                    <div className = "field">
-                        <label>Preço do Produto</label>
-                        <input type ="number" name = "name" placeholder = "18.00" value ={this.state.Preco} onChange = {(e)=>this.setState({Preco: e.target.value})}/>
-                    </div>
-
-                    <div className = "field">
-                        <label>Tamanho do Produto</label>
-                        <input type ="text" name = "name" placeholder = "XML" value ={this.state.Tamanho} onChange = {(e)=>this.setState({Tamanho: e.target.value})}/>
-                    </div>
-
-                    <div className = "field">
-                        <label>Cor do Produto</label>
-                        <input type ="text" name = "name" placeholder = "Cinza" value ={this.state.Cor} onChange = {(e)=>this.setState({Cor: e.target.value})}/>
-                    </div>
-                    <button className ="ui button blue">Adicionar</button>
-                </form>
-            </div>
-        );
-    }
-
+  render() {
+    return (
+      <Layout title="Agregar produto">
+        <Card>
+          <Card.Header>Info Producto</Card.Header>
+          <Card.Body>
+            <FormProduct
+              values={this.state}
+              changeValues={this.changeValues}
+              onSubmit={this.add}
+            />
+          </Card.Body>
+        </Card>
+      </Layout>
+    );
+  }
 }
 
 export default AddProduto;

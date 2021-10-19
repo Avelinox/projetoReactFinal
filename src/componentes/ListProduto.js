@@ -1,34 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ProdutCard from "./ProdutCard";
+import { Card, Table } from "react-bootstrap";
+import Layout from "./LayoutAdmin";
 
-const ListProduto = (props)=>{
-    console.log(props)
-
-
-    //codigo para deletar
-    const eliminar =(id)=>{
-        props.produtoId(id);
-    }
-
-//criando função que vai retornar a lista dos produtos
-
-    
-    const renderListProd =  props.produtos.map((produto)=>{
-        return(
-            <ProdutCard produto={produto} clickBalde = {eliminar} key ={produto.id}></ProdutCard>
-
-        );
-    })
-    return(
-        <div class ="main" style={{marginTop:"50px"}}>
-            <Link to="/add"><button className="ui button blue right" > Adicionar Produto</button></Link>
-            
-            <h2>Lista dos Produtos</h2>
-            
-            <div className="ui celled list">{renderListProd}</div>
-
-        </div>
-    )
-}
+const ListProduto = ({ produtos: products, deleteProductById }) => {
+  return (
+    <Layout title="Lista dos produtos">
+      <Card>
+        <Card.Body>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Img</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Tamanho</th>
+                <th>Cor</th>
+                <th>Metodo</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((product) => (
+                <ProdutCard
+                  produto={product}
+                  handleDeleteById={deleteProductById}
+                  key={product.id}
+                />
+              ))}
+            </tbody>
+          </Table>
+        </Card.Body>
+      </Card>
+    </Layout>
+  );
+};
 export default ListProduto;
